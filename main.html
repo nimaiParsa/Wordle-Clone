@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Wordle</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="root" id="main">
+        <nav>
+            <span class="material-symbols-outlined">
+                menu
+            </span>
+            <div class="head">Wordle</div>
+            <div class="settings">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+                <button class="subscribe">Subscibe to play more</button>
+            </div>
+        </nav>
+        
+        <div class="play">
+            <div class="tile-area">
+                <div class="tile" id="00"></div>
+                <div class="tile" id="01"></div>
+                <div class="tile" id="02"></div>
+                <div class="tile" id="03"></div>
+                <div class="tile" id="04"></div>
+                
+                <div class="tile" id="10"></div>
+                <div class="tile" id="11"></div>
+                <div class="tile" id="12"></div>
+                <div class="tile" id="13"></div>
+                <div class="tile" id="14"></div>
+                
+                <div class="tile" id="20"></div>
+                <div class="tile" id="21"></div>
+                <div class="tile" id="22"></div>
+                <div class="tile" id="23"></div>
+                <div class="tile" id="24"></div>
+                
+                <div class="tile" id="30"></div>
+                <div class="tile" id="31"></div>
+                <div class="tile" id="32"></div>
+                <div class="tile" id="33"></div>
+                <div class="tile" id="34"></div>
+                
+                <div class="tile" id="40"></div>
+                <div class="tile" id="41"></div>
+                <div class="tile" id="42"></div>
+                <div class="tile" id="43"></div>
+                <div class="tile" id="44"></div>
+                
+                <div class="tile" id="50"></div>
+                <div class="tile" id="51"></div>
+                <div class="tile" id="52"></div>
+                <div class="tile" id="53"></div>
+                <div class="tile" id="54"></div>
+                
+            </div>
+        </div>
+        <div class="keyboard">
+            <div class="row">
+                <button type="button" class="key" onclick="typeLetter('Q')" id="Q">Q</button>
+                <button type="button" class="key" onclick="typeLetter('W')" id="W">W</button>
+                <button type="button" class="key" onclick="typeLetter('E')" id="E">E</button>
+                <button type="button" class="key" onclick="typeLetter('R')" id="R">R</button>
+                <button type="button" class="key" onclick="typeLetter('T')" id="T">T</button>
+                <button type="button" class="key" onclick="typeLetter('Y')" id="Y">Y</button>
+                <button type="button" class="key" onclick="typeLetter('U')" id="U">U</button>
+                <button type="button" class="key" onclick="typeLetter('I')" id="I">I</button>
+                <button type="button" class="key" onclick="typeLetter('O')" id="O">O</button>
+                <button type="button" class="key" onclick="typeLetter('P')" id="P">P</button>
+            </div>
+            <div class="row">
+                <button class="key" onclick="typeLetter('A')" id="A">A</button>
+                <button class="key" onclick="typeLetter('S')" id="S">S</button>
+                <button class="key" onclick="typeLetter('D')" id="D">D</button>
+                <button class="key" onclick="typeLetter('F')" id="F">F</button>
+                <button class="key" onclick="typeLetter('G')" id="G">G</button>
+                <button class="key" onclick="typeLetter('H')" id="H">H</button>
+                <button class="key" onclick="typeLetter('J')" id="J">J</button>
+                <button class="key" onclick="typeLetter('K')" id="K">K</button>
+                <button class="key" onclick="typeLetter('L')" id="L">L</button>
+                
+            </div>
+            <div class="row">
+                <button class="enter-back" onclick="typeLetter('Enter')">ENTER</button>
+                
+                <button class="key" onclick="typeLetter('Z')" id="Z">Z</button>
+                <button class="key" onclick="typeLetter('X')" id="X">X</button>
+                <button class="key" onclick="typeLetter('C')" id="C">C</button>
+                <button class="key" onclick="typeLetter('V')" id="V">V</button>
+                <button class="key" onclick="typeLetter('B')" id="B">B</button>
+                <button class="key" onclick="typeLetter('N')" id="N">N</button>
+                <button class="key" onclick="typeLetter('M')" id="M">M</button>
+                
+                <button class="enter-back" onclick="typeLetter('Backspace')">
+                    <span class="material-symbols-outlined">
+                        backspace
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="error"><p style="padding: 30px 40px;">Not a Valid Word</p></div>
+    
+    <div id="end-screen-container">
+        <div class="end-bar">
+            <button id="end-screen-close" onclick="closeEndScreen()">
+                <span class="material-symbols-outlined">
+                 close
+                </span>
+            </button>
+        </div>
+        <div class="end-screen">
+            <p id="end-text"></p>
+            <p id="end-text-sentence">The Word is <br></p>
+            <p id="end-text-word"></p>
+            <button class="play-again" onclick="window.location.reload()">Play Again</button>
+        </div>
+    </div>
+</body>
+
+</html>
