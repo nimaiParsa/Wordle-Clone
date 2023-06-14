@@ -1,3 +1,9 @@
+/* 
+ *
+ *  author : nimaiParsa 
+ *
+ */
+
 document.addEventListener('keydown', (event) => { typeLetter(event.key) });
 
 const allWords = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
