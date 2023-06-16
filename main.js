@@ -139,6 +139,8 @@ function endGame(index) {
     let endScreen = document.getElementById('end-screen-container');
     let endText = document.getElementById('end-text');
     let endWord = document.getElementById('end-text-word');
+    let popup = document.querySelector('.popups');
+    popup.style.display = 'flex';
     endText.innerHTML = text[index];
     endWord.innerHTML = word;
     endScreen.style.display = 'block';
@@ -160,10 +162,16 @@ function reset() {
 
 function closeEndScreen() {
     document.getElementById('end-screen-container').style.display = 'none';
+    document.querySelector('.popups').style.display = 'none';
 }
 
 function showError() {
     let errorContainer = document.getElementById('error');
+    let popup = document.querySelector('.popups');
+    popup.style.display = 'flex';
     errorContainer.style.display = 'block';
-    setTimeout(() => { errorContainer.style.display = 'none'; }, 700);
+    setTimeout(() => {
+        errorContainer.style.display = 'none';
+        popup.style.display = 'none';
+    }, 700);
 }
