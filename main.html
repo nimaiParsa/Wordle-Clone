@@ -121,21 +121,23 @@
         </div>
     </div>
     
-    <div id="error"><p style="padding: 30px 40px;">Not a Valid Word</p></div>
-    
-    <div id="end-screen-container">
-        <div class="end-bar">
-            <button id="end-screen-close" onclick="closeEndScreen()">
-                <span class="material-symbols-outlined">
-                 close
-                </span>
-            </button>
-        </div>
-        <div class="end-screen">
-            <p id="end-text"></p>
-            <p id="end-text-sentence">The Word is <br></p>
-            <p id="end-text-word"></p>
-            <button class="play-again" onclick="window.location.reload()">Play Again</button>
+    <div class="popups">
+        <div id="error"><p>Not a Valid Word</p></div>
+        
+        <div id="end-screen-container">
+            <div class="end-bar">
+                <button id="end-screen-close" onclick="closeEndScreen()">
+                    <span class="material-symbols-outlined">
+                    close
+                    </span>
+                </button>
+            </div>
+            <div class="end-screen">
+                <p id="end-text"></p>
+                <p id="end-text-sentence">The Word is <br></p>
+                <p id="end-text-word"></p>
+                <button class="play-again" onclick="window.location.reload()">Play Again</button>
+            </div>
         </div>
     </div>
 </body>
